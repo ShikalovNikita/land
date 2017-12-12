@@ -39,3 +39,8 @@
 		@else
 			src: url('#{$file-path}.eot')
 			src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype')
+@mixin clearfix
+	&:after
+		content: ""
+		display: table
+		clear: both
