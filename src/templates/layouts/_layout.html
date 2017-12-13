@@ -18,7 +18,75 @@
 		{# {% include "../partials/_meta-tags.html" %} #}
 	</head>
 	<body>
+		
 
+
+		<div id="cartContainer" style="text-align: center;">
+				<div class="cartName">Корзина</div>
+				<div class="cartCounter"></div>
+				<div class="cartPrice">
+					<span class="cartSumma"></span> руб.
+				</div>
+				<div class="cartControls">
+					<span class="cartOpen" id="checkout">Открыть корзину</span>	
+				</div>	
+			
+				
+		</div>
+		<div class="popup">
+			<div class="controls_modal">
+		<span class="close">
+		<i class="fa fa-close"></i>
+		</span>
+		</div>
+		<h2>Ваша корзина</h2>
+		<div class="popup__content"></div>
+		<form action="" method="POST">
+			<div class="form_group">
+				<div class="contacts">
+					<div class="form_group_title">
+						<h3>Контактные данные</h3>
+					</div>
+					<div class="form_group_row">
+						<label for="family">Фамилия:</label>
+						<input type="text" name="family">
+					</div>
+					<div class="form_group_row">
+						<label for="name">Имя:</label>
+						<input type="text" name="name">
+					</div>
+					<div class="form_group_row">
+						<label for="phone">Телефон:</label>
+						<input type="text" name="phone">
+					</div>
+				</div>
+				<div class="delivery">
+					<div class="form_group_title">
+						<h3>Адрес доставки</h3>
+					</div>
+					<div class="form_group_row">
+						<label for="city">Город:</label>
+						<select name="city">
+							<option value="" disabled="" selected="">Выбирете город</option>
+							<option value="ekb">Екатеринбург</option>
+							<option value="vp">Верхняя Пышма</option>
+							<option value="aram">Арамиль</option>
+						</select>
+					</div>
+					<div class="form_group_row">
+						<label for="address">Адрес (улица / дом / квартира):</label>
+						<input type="text" name="address">
+					</div>
+				</div>
+			</div>
+			<div class="form_group">
+				<div class="form_group_row">
+					<label for="comment">Комментарий:</label>
+					<div><textarea name="comment" placeholder="Ваши пожелания"></textarea></div>
+				</div>
+			</div>
+		</form>
+		</div>
 		<!-- BEGIN content -->
 		<div class="wrapper">
 		<!-- begin header -->
@@ -82,7 +150,7 @@
 				<!-- begin item_catalog -->
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
-					<div class="catalog__item__img">
+					<div class="catalog__item__img product_2">
 						<img src="/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
@@ -92,19 +160,19 @@
 					</div>
 					<!-- end catalog__item__description -->
 					<!-- begin catalog__item__price -->
-					<div class="catalog__item__price">
+					<div class="catalog__item__price" data-price="1800">
 						1800 Р
 					</div>
 					<!-- end catalog__item__price -->
 					<!-- begin catalog__item__cart -->
-					<a class="catalog__item__cart">В корзину</a>
+					<a class="catalog__item__cart" data-id="2">В корзину</a>
 					<!-- end catalog__item__cart -->
 				</div>
 				<!-- end item_catalog -->
 				<!-- begin item_catalog -->
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
-					<div class="catalog__item__img">
+					<div class="catalog__item__img product_1">
 						<img src="/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
@@ -114,19 +182,19 @@
 					</div>
 					<!-- end catalog__item__description -->
 					<!-- begin catalog__item__price -->
-					<div class="catalog__item__price">
+					<div class="catalog__item__price" data-price="1800">
 						1800 Р
 					</div>
 					<!-- end catalog__item__price -->
 					<!-- begin catalog__item__cart -->
-					<a class="catalog__item__cart">В корзину</a>
+					<a class="catalog__item__cart" data-id="1">В корзину</a>
 					<!-- end catalog__item__cart -->
 				</div>
 				<!-- end item_catalog -->
 				<!-- begin item_catalog -->
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
-					<div class="catalog__item__img">
+					<div class="catalog__item__img product_7">
 						<img src="/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
@@ -136,19 +204,19 @@
 					</div>
 					<!-- end catalog__item__description -->
 					<!-- begin catalog__item__price -->
-					<div class="catalog__item__price">
+					<div class="catalog__item__price" data-price="1800">
 						1800 Р
 					</div>
 					<!-- end catalog__item__price -->
 					<!-- begin catalog__item__cart -->
-					<a class="catalog__item__cart">В корзину</a>
+					<a class="catalog__item__cart" data-id="7">В корзину</a>
 					<!-- end catalog__item__cart -->
 				</div>
 				<!-- end item_catalog -->
 				<!-- begin item_catalog -->
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
-					<div class="catalog__item__img">
+					<div class="catalog__item__img product_3">
 						<img src="/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
@@ -158,12 +226,12 @@
 					</div>
 					<!-- end catalog__item__description -->
 					<!-- begin catalog__item__price -->
-					<div class="catalog__item__price">
+					<div class="catalog__item__price" data-price="1800">
 						1800 Р
 					</div>
 					<!-- end catalog__item__price -->
 					<!-- begin catalog__item__cart -->
-					<a class="catalog__item__cart">В корзину</a>
+					<a class="catalog__item__cart" data-id="3">В корзину</a>
 					<!-- end catalog__item__cart -->
 				</div>
 				<!-- end item_catalog -->
@@ -277,9 +345,7 @@
 			<!-- end wrapper -->
 		</footer>
 		<!-- END content -->
-
 		<!-- BEGIN scripts -->
-		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 		<script type="text/javascript" src="js/build.js"></script>
 		<!-- END scripts -->
 
