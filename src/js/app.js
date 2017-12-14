@@ -28,16 +28,17 @@ $(document).ready(function() {
 			itemId = this.getAttribute('data-id'),
 			itemTitle = parentBox.querySelector('.catalog__item__description').innerHTML,
 			itemPrice = parentBox.querySelector('.catalog__item__price').getAttribute('data-price'),
+			itemImg = parentBox.querySelector('.catalog__item__img').innerHTML,
 			totalPrice = 0,
 			totalCount = 0;
 		if(cartData.hasOwnProperty(itemId)) {
-			cartData[itemId][2] += 1;
+			cartData[itemId][3] += 1;
 		} else {
-			cartData[itemId] = [itemTitle, itemPrice, 1];
+			cartData[itemId] = [itemImg, itemTitle, itemPrice, 1];
 		}
 		for(var items in cartData) {
-			totalPrice += Number(cartData[items][1]) * Number(cartData[items][2]);
-			totalCount += Number(cartData[items][2]);
+			totalPrice += Number(cartData[items][2]) * Number(cartData[items][3]);
+			totalCount += Number(cartData[items][3]);
 		}
 		$('.cartCounter').html(totalCount);
 		$('.cartSumma').html(totalPrice);
@@ -76,7 +77,7 @@ $(document).ready(function() {
 			totalItems = '',
 			totalPrice = 0;
 		if(cartData !== null) {
-			totalItems = '<table><tr><th>Наименование</th><th>Цена</th><th>Кол-во</th></tr>';
+			totalItems = '<div class="popup__content__table">Товар</div><table>';
 			for(var items in cartData) {
 				totalPrice += Number(cartData[items][1]) * Number(cartData[items][2]);
 				totalItems += '<tr>';
@@ -104,8 +105,8 @@ $(document).ready(function() {
 	addEvent(document.getElementById('checkout'), 'click', openCart);
 	var cartData = getCartData() || {}, totalCount = 0, totalPrice = 0;
 	for(var items in cartData) {
-		totalPrice += Number(cartData[items][1]) * Number(cartData[items][2]);
-		totalCount += Number(cartData[items][2]);
+		totalPrice += Number(cartData[items][2]) * Number(cartData[items][3]);
+		totalCount += Number(cartData[items][3]);
 	}
 	$('.cartCounter').html(totalCount);
 	$('.cartSumma').html(totalPrice);
@@ -131,7 +132,7 @@ $(document).ready(function() {
 	$(this).css({
 	'z-index':'-1'
 	});
-	$('.popup div > .close').on('click',function(){
+	$('.popup__controls__close').on('click',function(){
 		$(this).parent().parent().css({
 			'transform':'translateY(-300%)'
 		});

@@ -3,7 +3,8 @@
   "version": "4.0.0",
   "description": "Template frontend",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp",
+    "serve": "gulp serve"
   },
   "author": "Shikalov Nikita",
   "license": "MIT",
@@ -35,15 +36,15 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
+    "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "lost": "^8.2.0",
     "postcss-csso": "^3.0.0",
     "require-dir": "^0.3.2",
     "require-yaml": "0.0.1",
     "run-sequence": "^2.2.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
     "slick-carousel": "^1.8.1",
-    "jquery": "^3.2.1"
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
