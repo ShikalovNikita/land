@@ -41,51 +41,61 @@
 		</div>
 		<h2>Ваша корзина</h2>
 		<div class="popup__content"></div>
-		<form action="" method="POST">
-			<div class="form_group">
-				<div class="contacts">
-					<div class="form_group_title">
-						<h3>Контактные данные</h3>
+		<div class="popup__order" style="display: none">
+			<form action="" method="POST" id="clientInformation">
+				<div class="form_group">
+					<div class="contacts">
+						<div class="form_group_title">
+							<h3>Контактные данные</h3>
+						</div>
+						<div class="form_group_row">
+							<label for="family">Фамилия:</label>
+							<input type="text" name="last_name">
+						</div>
+						<div class="form_group_row">
+							<label for="name">Имя:</label>
+							<input type="text" name="first_name">
+						</div>
+						<div class="form_group_row">
+							<label for="phone">Телефон:</label>
+							<input type="text" name="phone">
+						</div>
 					</div>
-					<div class="form_group_row">
-						<label for="family">Фамилия:</label>
-						<input type="text" name="family">
-					</div>
-					<div class="form_group_row">
-						<label for="name">Имя:</label>
-						<input type="text" name="name">
-					</div>
-					<div class="form_group_row">
-						<label for="phone">Телефон:</label>
-						<input type="text" name="phone">
+					<div class="delivery">
+						<div class="form_group_title">
+							<h3>Адрес доставки</h3>
+						</div>
+						<div class="form_group_row">
+							<label for="city">Город:</label>
+							<select name="city">
+								<option value="" disabled="" selected="">Выбирете город</option>
+								<option value="ekb">Екатеринбург</option>
+								<option value="vp">Верхняя Пышма</option>
+								<option value="aram">Арамиль</option>
+							</select>
+						</div>
+						<div class="form_group_row">
+							<label for="address">Адрес (улица / дом / квартира):</label>
+							<input type="text" name="address">
+						</div>
 					</div>
 				</div>
-				<div class="delivery">
-					<div class="form_group_title">
-						<h3>Адрес доставки</h3>
-					</div>
-					<div class="form_group_row">
-						<label for="city">Город:</label>
-						<select name="city">
-							<option value="" disabled="" selected="">Выбирете город</option>
-							<option value="ekb">Екатеринбург</option>
-							<option value="vp">Верхняя Пышма</option>
-							<option value="aram">Арамиль</option>
-						</select>
-					</div>
-					<div class="form_group_row">
-						<label for="address">Адрес (улица / дом / квартира):</label>
-						<input type="text" name="address">
+				<div class="form_group">
+						<div class="form_group_title">
+							<h3>Способ оплаты</h3>
+						</div>
+						<div class="form_group_row">
+						<div class="radioInput">
+							<input type="radio" id="paidType" checked="" name="paidType" value="on">
+							<label for="paidType">Наличными при получении</label>
+						</div>
 					</div>
 				</div>
+			</form>
+			<div style="float: left;">
+				<div class="popup__order__summa"></div>
 			</div>
-			<div class="form_group">
-				<div class="form_group_row">
-					<label for="comment">Комментарий:</label>
-					<div><textarea name="comment" placeholder="Ваши пожелания"></textarea></div>
-				</div>
-			</div>
-		</form>
+		</div>
 		</div>
 		<!-- BEGIN content -->
 		<div class="wrapper">
@@ -96,12 +106,12 @@
 				<!-- end header__logo -->
 				<!-- begin header__title -->
 				<div class="header__navigation">
-					<nav>
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Главная</a></li>
-						<li><a href="#">Главная</a></li>
+					<nav id="menu">
+						<li><a href="/">Главная</a></li>
+						<li><a href="#catalog">Каталог</a></li>
+						<li><a href="#akcii">Акции</a></li>
+						<li><a href="#reviews">Отзывы</a></li>
+						<li><a href="#contacts">Контакты</a></li>
 					</nav>
 				</div>
 				<!-- end header__title -->
@@ -144,14 +154,14 @@
 		</div>
 		<!-- begin wrapper -->
 		<div class="wrapper">
-			<h1>Каталог тюбингов</h1>
+			<h1 id="catalog">Каталог тюбингов</h1>
 			<!-- begin section__catalog -->
 			<div class="section catalog">
 				<!-- begin item_catalog -->
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
 					<div class="catalog__item__img product_2">
-						<img src="/img/placeholder.jpeg" alt="">
+						<img src="http://тюбинг-екб.рф/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
 					<!-- begin catalog__item__description -->
@@ -173,7 +183,7 @@
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
 					<div class="catalog__item__img product_1">
-						<img src="/img/placeholder.jpeg" alt="">
+						<img src="http://тюбинг-екб.рф/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
 					<!-- begin catalog__item__description -->
@@ -195,7 +205,7 @@
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
 					<div class="catalog__item__img product_7">
-						<img src="/img/placeholder.jpeg" alt="">
+						<img src="http://тюбинг-екб.рф/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
 					<!-- begin catalog__item__description -->
@@ -217,7 +227,7 @@
 				<div class="catalog__item">
 					<!-- begin catalog__item__img -->
 					<div class="catalog__item__img product_3">
-						<img src="/img/placeholder.jpeg" alt="">
+						<img src="http://тюбинг-екб.рф/img/placeholder.jpeg" alt="">
 					</div>
 					<!-- end catalog__item__img -->
 					<!-- begin catalog__item__description -->
@@ -273,7 +283,7 @@
 				<!-- end about__item -->
 			</div>
 			<!-- end section about -->
-			<h1>Акция</h1>
+			<h1 id="akcii">Акция</h1>
 			<div class="section special">
 				<!-- begin special__description -->
 				<div class="special__description">
@@ -300,7 +310,7 @@
 				</div>
 			</div>
 
-			<h1>Отзывы</h1>
+			<h1 id="reviews">Отзывы</h1>
 			<div class="section reviews">
 				<div class="reviews__slide">
 					<div class="reviews__slide__item">
@@ -336,16 +346,17 @@
 				</div>
 			</div>
 		</div>
+		<div id="contacts" class="map" style="position: relative;">
+			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af89f51cdca3cd78a6998a6e359284941efabba9d32b1ab5977af1692aa68eb10&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+		</div>
 		<!-- end wrapper -->
 		<footer>
-			<!-- begin wrapper -->
-			<div class="wrapper">
-				asdasdasd
-			</div>
-			<!-- end wrapper -->
+			<div>Создание сайта <a href="https://vk.com/frameouts">CodeDeSait</a></div>
+			<div class="small">Copyrights &copy; 2017</div>
 		</footer>
 		<!-- END content -->
 		<!-- BEGIN scripts -->
+		<script type="text/javascript" src="https://unpkg.com/sweetalert2@7.0.9/dist/sweetalert2.all.js"></script>
 		<script type="text/javascript" src="js/build.js"></script>
 		<!-- END scripts -->
 
