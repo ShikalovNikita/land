@@ -187,7 +187,6 @@ $(document).ready(function() {
 			$(this).parent().parent().css({
 				'transform':'translateY(-300%)'
 			});
-
 			$('body').removeClass('overlay');
 			
 			$(this).parent().siblings('.btn').css({
