@@ -5,97 +5,96 @@
 		<meta charset="utf-8">
 		<title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 		<meta name="theme-color" content="#fff">
 		<meta name="format-detection" content="telephone=no">
+		<meta name="description" content="Купить тюбинг в Екатеринбурге (ватрушки для катания по снегу). Надёжные надувные санки. Вы можете недорого купить тюбинги, ватрушки, санки." />
+		<meta name="keywords" content= "Тюбинг, ватрушки, для катания по снегу, для катания с горки, надувные санки, купить, недорого, цена" />
+		<meta name="yandex-verification" content="5f2c02d5df42772a" />
+
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="css/app.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- Add the slick-theme.css if you want default styling -->
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
-<!-- Add the slick-theme.css if you want default styling -->
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+		<!-- Add the slick-theme.css if you want default styling -->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
 		{# {% include "../partials/_meta-tags.html" %} #}
 	</head>
 	<body>
-		
-
-
 		<div id="cartContainer" style="text-align: center;">
-				<div class="cartName">Корзина</div>
-				<div class="cartCounter"></div>
-				<div class="cartPrice">
-					<span class="cartSumma"></span> руб.
-				</div>
-				<div class="cartControls">
-					<span class="cartOpen" id="checkout">Открыть корзину</span>	
-				</div>	
-			
-				
+			<div class="cartName">Корзина</div>
+			<div class="cartCounter"></div>
+			<div class="cartPrice">
+				<span class="cartSumma"></span> руб.
+			</div>
+			<div class="cartControls">
+				<span class="cartOpen" id="checkout">Открыть корзину</span>	
+			</div>
 		</div>
 		<div class="popup">
 			<div class="popup__controls">
-		<span class="popup__controls__close">
-		<i class="fa fa-close"></i>
-		</span>
-		</div>
-		<h2>Ваша корзина</h2>
-		<div class="popup__content"></div>
-		<div class="popup__order" style="display: none">
-			<form action="" method="POST" id="clientInformation">
-				<div class="form_group">
-					<div class="contacts">
-						<div class="form_group_title">
-							<h3>Контактные данные</h3>
-						</div>
-						<div class="form_group_row">
-							<label for="family">Фамилия:</label>
-							<input type="text" name="last_name">
-						</div>
-						<div class="form_group_row">
-							<label for="name">Имя:</label>
-							<input type="text" name="first_name">
-						</div>
-						<div class="form_group_row">
-							<label for="phone">Телефон:</label>
-							<input type="text" name="phone">
-						</div>
-					</div>
-					<div class="delivery">
-						<div class="form_group_title">
-							<h3>Адрес доставки</h3>
-						</div>
-						<div class="form_group_row">
-							<label for="city">Город:</label>
-							<select name="city">
-								<option value="" disabled="" selected="">Выбирете город</option>
-								<option value="ekb">Екатеринбург</option>
-								<option value="vp">Верхняя Пышма</option>
-								<option value="aram">Арамиль</option>
-							</select>
-						</div>
-						<div class="form_group_row">
-							<label for="address">Адрес (улица / дом / квартира):</label>
-							<input type="text" name="address">
-						</div>
-					</div>
-				</div>
-				<div class="form_group">
-						<div class="form_group_title">
-							<h3>Способ оплаты</h3>
-						</div>
-						<div class="form_group_row">
-						<div class="radioInput">
-							<input type="radio" id="paidType" checked="" name="paidType" value="on">
-							<label for="paidType">Наличными при получении</label>
-						</div>
-					</div>
-				</div>
-			</form>
-			<div style="float: left;">
-				<div class="popup__order__summa"></div>
+				<span class="popup__controls__close">
+					<i class="fa fa-close"></i>
+				</span>
 			</div>
-		</div>
+			<h2>Ваша корзина</h2>
+			<div class="popup__content"></div>
+			<div class="popup__order" style="display: none">
+				<form action="" method="POST" id="clientInformation">
+					<div class="form_group">
+						<div class="contacts">
+							<div class="form_group_title">
+								<h3>Контактные данные</h3>
+							</div>
+							<div class="form_group_row">
+								<label for="family">Фамилия:</label>
+								<input type="text" name="last_name">
+							</div>
+							<div class="form_group_row">
+								<label for="name">Имя:</label>
+								<input type="text" name="first_name">
+							</div>
+							<div class="form_group_row">
+								<label for="phone">Телефон:</label>
+								<input type="text" name="phone">
+							</div>
+						</div>
+						<div class="delivery">
+							<div class="form_group_title">
+								<h3>Адрес доставки</h3>
+							</div>
+							<div class="form_group_row">
+								<label for="city">Город:</label>
+								<select name="city">
+									<option value="" disabled="" selected="">Выбирете город</option>
+									<option value="ekb">Екатеринбург</option>
+									<option value="vp">Верхняя Пышма</option>
+									<option value="aram">Арамиль</option>
+								</select>
+							</div>
+							<div class="form_group_row">
+								<label for="address">Адрес (улица / дом / квартира):</label>
+								<input type="text" name="address">
+							</div>
+						</div>
+					</div>
+					<div class="form_group">
+							<div class="form_group_title">
+								<h3>Способ оплаты</h3>
+							</div>
+							<div class="form_group_row">
+							<div class="radioInput">
+								<input type="radio" id="paidType" checked="" name="paidType" value="on">
+								<label for="paidType">Наличными при получении</label>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div style="float: left;">
+					<div class="popup__order__summa"></div>
+				</div>
+			</div>
 		</div>
 		<!-- BEGIN content -->
 		<div class="wrapper">
@@ -118,7 +117,7 @@
 				<!-- begin header__contacts -->
 				<div class="header__contacts">
 					<div class="header__contacts__phone"><i class="fa fa-phone"></i> 8 (909) 700-21-38</div>
-					<span>Заказать звонок</span>
+					<a id="orderCall">Заказать звонок</a>
 				</div>
 				<!-- end header__contacts -->
 			</div>
@@ -136,11 +135,9 @@
 				<!-- begin section__img-inner -->
 				<div class="section__img-inner wrapper">
 					
-					<p>Качественные тюбинги<br>
-					<span>российского производства</span></p>
-					
-					<p class="garant">Каждый проходит тест на качество.<br> Мы гарантируем вам полную безопасность</p>
-					<a href="#">Получить консультацию</a>
+					<h1>Тюбинги разных размеров и цветов</h1>
+					<p class="garant">Каждая ватрушка проходит тест на качество.<br> Мы гарантируем вам полную безопасность</p>
+					<!-- <a id="consult">Получить консультацию</a> -->
 				</div>
 				<!-- end section__img-inner -->
 			</div>
@@ -154,7 +151,7 @@
 		</div>
 		<!-- begin wrapper -->
 		<div class="wrapper">
-			<h1 id="catalog">Каталог тюбингов</h1>
+			<h1 id="catalog">Каталог</h1>
 			<!-- begin section__catalog -->
 			<div class="section catalog">
 				<!-- begin item_catalog -->
@@ -250,6 +247,8 @@
 			<h1>Как выбрать тюбинг?</h1>
 			<!-- begin section about -->
 			<p>Выбрать тюбинг очень просто! В случаи если вы собираетесь кататься вдвоем, выбирайте диаметр 110-120 см. Они выдерживают достаточно сильную нагрузку порядка 120-130 кг. Ниже приведена простая таблица соответствий роста и диаметра, это вам поможет сделать правильный выбор тюбинга для катания.</p>
+			<br>
+			<p>Примеряя надувную ватрушку, нужно заметить, удобно ли вам или ребенку в ней сидеть и крепко ли катающийся сможет держаться за ручки. Особенно это важно, если вы решили купить крупный по диаметру тюбинг для двоих – обязательно определитесь, как вы будете размещаться в нем, все ли смогут крепко ухватиться за стропы безопасности.</p>
 			<div class="section about" style="text-align: center; padding-bottom: 15px">
 
 				<img src="/img/vibor.png" alt="">
@@ -358,6 +357,35 @@
 		<!-- BEGIN scripts -->
 		<script type="text/javascript" src="https://unpkg.com/sweetalert2@7.0.9/dist/sweetalert2.all.js"></script>
 		<script type="text/javascript" src="js/build.js"></script>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+		    (function (d, w, c) {
+		        (w[c] = w[c] || []).push(function() {
+		            try {
+		                w.yaCounter47020989 = new Ya.Metrika({
+		                    id:47020989,
+		                    clickmap:true,
+		                    trackLinks:true,
+		                    accurateTrackBounce:true,
+		                    webvisor:true
+		                });
+		            } catch(e) { }
+		        });
+
+		        var n = d.getElementsByTagName("script")[0],
+		            s = d.createElement("script"),
+		            f = function () { n.parentNode.insertBefore(s, n); };
+		        s.type = "text/javascript";
+		        s.async = true;
+		        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+		        if (w.opera == "[object Opera]") {
+		            d.addEventListener("DOMContentLoaded", f, false);
+		        } else { f(); }
+		    })(document, window, "yandex_metrika_callbacks");
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/47020989" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
 		<!-- END scripts -->
 
 	</body>

@@ -159,32 +159,86 @@ $(document).ready(function() {
 		adaptiveHeight: true,
 		autoplay: true
 	});
+	$('#orderCall').on('click', function(){
+		$('.popup h2').html("Заказать звонок");
+		$('.popup__content').html("<div class='orderCall'>"+
+										"<p>Оставьте свой телефон и мы вам обязательно перезвоним</p>"+
+										"<input type='text' name='phone' id='phoneOrder' placeholder='Ваш телефон'>"+
+										"<button class='sendOrderCall'>Отправить</button>"+
+									"</div>");
 
+		$('.popup').css({
+			'transform':'translate(0%, 0%)',
+			'z-index':'9999',
+			'padding':'10px 20px'
+		});
+		
+		$('body').addClass('overlay');
+		
+		$('.popup h1').animate({
+			left:'0'
+		},1000);
+		
+		$(this).css({
+			'z-index':'-1'
+		});
+		
+		$('.popup__controls__close').on('click',function(){
+			$(this).parent().parent().css({
+				'transform':'translateY(-300%)'
+			});
+
+			$('body').removeClass('overlay');
+			
+			$(this).parent().siblings('.btn').css({
+				'z-index':'1'
+			});
+		});
+		$('.sendOrderCall').on('click', function(){
+			$.ajax({
+				url: '/orderCall.php',
+				dataType: 'json',
+				type: 'post',
+				data: $('#phoneOrder').val(),
+				success: function(response) {
+					if(response.good) {
+						$('.popup__order').html('<div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: block;"><div class="swal2-success-circular-line-left" style="background: rgb(255, 255, 255);"></div><span class="swal2-success-line-tip swal2-animate-success-line-tip"></span> <span class="swal2-success-line-long swal2-animate-success-line-long"></span><div class="swal2-success-ring"></div> <div class="swal2-success-fix" style="background: rgb(255, 255, 255);"></div><div class="swal2-success-circular-line-right" style="background: rgb(255, 255, 255);"></div></div><p>Отправленно, ожидайте скоро с Вами свяжется менеджер.</p>');
+						localStorage.removeItem('cart');
+					} else {
+						$('.popup__order').html('<div class="swal2-icon swal2-error"><span class="swal2-x-mark"><span class="swal2-x-mark-line-left"></span><span class="swal2-x-mark-line-right"></span></span></div><p>Не получилось отправить, позвоните нам 8 (909) 700-21-38 и мы решим это!</p>');
+					}
+				}
+			});
+		});
+	});
 	$('#checkout').on('click', function(){
 		$('.popup').css({
-	'transform':'translate(0%, 0%)',
-	'z-index':'9999',
-	'padding':'10px 20px'
-	});
-	    
-	$('body').addClass('overlay');
-	    
-	$('.popup h1').animate({
-		left:'0'
-	},1000);
-	$(this).css({
-	'z-index':'-1'
-	});
-	$('.popup__controls__close').on('click',function(){
-		$(this).parent().parent().css({
-			'transform':'translateY(-300%)'
+			'transform':'translate(0%, 0%)',
+			'z-index':'9999',
+			'padding':'10px 20px'
 		});
-	     
-		$('body').removeClass('overlay');
-		$(this).parent().siblings('.btn').css({
-			'z-index':'1'
+		
+		$('body').addClass('overlay');
+		
+		$('.popup h1').animate({
+			left:'0'
+		},1000);
+		
+		$(this).css({
+			'z-index':'-1'
 		});
-	});
+		
+		$('.popup__controls__close').on('click',function(){
+			$(this).parent().parent().css({
+				'transform':'translateY(-300%)'
+			});
+
+			$('body').removeClass('overlay');
+			
+			$(this).parent().siblings('.btn').css({
+				'z-index':'1'
+			});
+		});
 	});
 
 	$("#menu").on("click","a", function (event) {
